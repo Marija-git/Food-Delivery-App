@@ -1,0 +1,25 @@
+﻿<link rel="stylesheet" href="~/CSS/proverastatusa.css" type="text/css" />
+@{
+    ViewBag.Title = "ProveraStatusa";
+}
+
+<h2>Provera Statusa</h2>
+<p>Unesite trazene podatke koje ste uneli prilikom registracije</p>
+
+<form action="~/Dostavljac/StatusVerifikacije" method="post">
+    <table>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" /></td>
+        </tr>
+        <tr>
+            <td>Lozinka:</td>
+            <td><input type="password" name="lozinka" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Proveri status" />
+            </td>
+        </tr>
+    </table>
+</form>

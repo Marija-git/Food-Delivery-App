@@ -1,0 +1,56 @@
+﻿<link rel="stylesheet" href="~/CSS/profil.css" type="text/css" />
+@model Dostava_projekat.Models.Korisnik
+@{
+    ViewBag.Title = "Profil";
+}
+
+<h3>Izmeni profil</h3>
+
+<form action="~/Korisnik/IzmeniProfil" method="post">
+    <table>
+      
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" value="@Model.Email" /></td>
+        </tr>
+        <tr>
+            <td>Lozinka</td>
+            <td><input type="text" name="lozinka" value="@Model.Lozinka" /> </td>
+        </tr>
+        <tr>
+            <td>Ime</td>
+            <td><input type="text" name="ime" value="@Model.Ime" /> </td>
+        </tr>
+        <tr>
+            <td>Prezime</td>
+            <td><input type="text" name="prezime" value="@Model.Prezime" /> </td>
+        </tr>
+       
+        <tr>
+
+            <td>Datum rodjenja</td>
+            <td><input type="date" name="DatumRodjenja" value="@Model.DatumRodjenja.ToString("yyyy-MM-dd")" /> </td>
+        </tr>
+        <tr>
+            <td>Adresa</td>
+            <td><input type="text" name="adresa" value="@Model.Adresa" /></td>
+        </tr>
+
+        <tr>
+            <td>ImagePath</td>
+            <td>
+                <label for="imgPath">Dodaj sliku</label>
+                <input type="file" id="imgPath" name="imgPath" accept="image/*" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input id="sbm" type="submit" value="izmeni" />
+                <input id="sbm" type="hidden" name="KorisnickoIme" value="@Model.KorisnickoIme" />
+            </td>
+        </tr>
+
+
+    </table>
+</form>

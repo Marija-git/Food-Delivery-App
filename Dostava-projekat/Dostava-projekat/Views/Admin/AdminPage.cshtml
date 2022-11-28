@@ -1,0 +1,90 @@
+﻿<link rel="stylesheet" href="~/CSS/admin.css" type="text/css" />
+@model IEnumerable<Dostava_projekat.Models.Porudzbina>
+@using Dostava_projekat.Models;
+@{
+    ViewBag.Title = "AdminPage";
+}
+
+<h2>Admin</h2>
+
+
+
+@if (ViewBag.model.ImagePath != null)
+{
+    <div id="div1">
+
+        <div id="div2">
+            <p>Profilna slika:</p><br />
+            <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="error" style="width:100px;height:100px;" />
+        </div>
+
+
+
+    </div>
+}
+
+<div id="div3">
+    <ul>
+        <li> <a id="a1" href="~/Korisnik/Profil">Azuriranje profila</a></li>
+        <li>  <a id="a2" href="~/Admin/Index">Zahtevi za registraciju</a></li>
+    </ul>
+
+</div>
+
+
+<hr />
+
+<h4 id="prvi">Svi proizvodi</h4>
+<form method="post" action="~/Admin/DodajProizvod">
+
+    <table id="t1" border="1">
+        <tr>
+            <th>Ime</th>
+            <th>Cena</th>
+            <th>Sastojci</th>
+        </tr>
+        @foreach (Proizvod p in ViewBag.proizvodi)
+        {
+            <tr>
+                <td>@p.ImeProizvoda</td>
+                <td>@p.CenaProizvoda</td>
+                <td>@p.Sastojci</td>
+            </tr>
+        }
+    </table>
+
+    <input type="submit" value="Dodaj novi proizovd" />
+</form>
+
+
+
+
+<hr />
+<h4>Sve porudzbine</h4>
+<table id="t2" border="1">
+    <tr>
+        <th>Sta ste porucili</th>
+        <th>Kolicina</th>
+        <th>Adresa</th>
+        <th>Komentar</th>
+        <th>Cena porudzbine</th>
+        <th>Status porudzbine</th>
+
+    </tr>
+    @foreach (Dostava_projekat.Models.Porudzbina item in Model)
+    {
+        if (item.Status == "ZAPOCETO" || item.Status == "ZAVRSENO")
+        {
+
+
+            <tr>
+                <td>@item.StaPorucuje</td>
+                <td>@item.Kolicina</td>
+                <td>@item.Adresa</td>
+                <td>@item.Komentar</td>
+                <td>@item.CenaPorudzbine</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    }
+</table>

@@ -1,0 +1,75 @@
+﻿@model Dostava_projekat.Models.Korisnik
+<link rel="stylesheet" href="~/CSS/register.css" type="text/css" />
+@{
+    ViewBag.Title = "Register";
+}
+
+<h3>Register</h3>
+<div>
+    @ViewBag.Message
+</div>
+
+<form action="~/Authentication/RegistracijaKorisnika" method="post">
+    <table>
+        <tr>
+            <td>Korisinicko ime:</td>
+            <td>
+                <input type="text" name="korisnickoIme"
+            </td>
+        </tr>
+        <tr>
+            <td>Lozinka</td>
+            <td>
+                <input type="password" name="lozinka"
+            </td>
+        </tr>
+        <tr>
+            <td>Lozinka</td>
+           <td> <input type="password" name="nekalozinka" /></td>
+        </tr>
+        <tr>
+            <td>Ime</td>
+            <td>
+                <input type="text" name="ime"
+            </td>
+        </tr>
+        <tr>
+            <td>Prezime</td>
+            <td>
+                <input type="text" name="prezime"
+            </td>
+        </tr>
+        <tr>
+            <td>Tip</td>
+            <td>
+                <input list="tip" name="tip" />
+                <datalist id="tip">
+                    <option value="Administrator"></option>
+                    <option value="Dostavljac"></option>
+                    <option value="Potrosac"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="email" name="email" />
+            </td>
+        </tr>
+        <tr>
+            <td>Datum rodjenja</td>
+            <td>  <input type="date" name="DatumRodjenja" /></td>
+        </tr>
+        <tr>
+            <td>Adresa</td>
+            <td><input type="text" name="Adresa" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input id="sbm" type="submit" value="Register" />
+            </td>
+        </tr>
+    </table>
+
+</form>

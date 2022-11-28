@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Dostava_projekat.Models.Porudzbina>
+<link rel="stylesheet" href="~/CSS/potrosacpage.css" type="text/css" />
+@{
+    ViewBag.Title = "Potrosac";
+}
+
+<h2>Potrosac</h2>
+
+@if (ViewBag.model.ImagePath != null)
+{
+    <div id="div1">
+
+        <div id="div2">
+            <p>Profilna slika:</p><br />
+            <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="error" style="width:100px;height:100px;" />
+        </div>
+
+    </div>
+}
+<div id="div3">
+    <ul>
+        <li>
+            <a id="a1" href="~/Korisnik/Profil">Azuriranje profila</a>
+        </li>
+        <li>
+            <form method="post" action="~/Potrosac/Poruci">
+                <input type="submit" value="Poruci" />
+            </form>
+        </li>
+    </ul>
+</div>
+
+
+
+
+<hr />
+<h4>Prikaz sivh ZAVRSENIH dostava(porudzbina)</h4>
+
+<table border="1">
+    <tr>
+        <th>Sta ste porucili</th>
+        <th>Kolicina</th>
+        <th>Adresa</th>
+        <th>Komentar</th>
+        <th>Cena porudzbine</th>
+        <th>Status porudzbine</th>
+    </tr>
+
+    @foreach (Dostava_projekat.Models.Porudzbina item in Model)
+    {
+        //prepravi u zavrseno
+
+        if (item.Status == "ZAVRSENO" && @ViewBag.model.Adresa == item.Adresa)
+        {
+            <tr>
+                <td>@item.StaPorucuje</td>
+                <td>@item.Kolicina</td>
+                <td>@item.Adresa</td>
+                <td>@item.Komentar</td>
+                <td>@item.CenaPorudzbine</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    }
+</table>
+
+<hr />
+

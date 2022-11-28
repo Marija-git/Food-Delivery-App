@@ -1,0 +1,63 @@
+﻿<link rel="stylesheet" href="~/CSS/porucivanje.css" type="text/css" />
+@using Dostava_projekat.Models
+@{
+    ViewBag.Title = "Poruci";
+}
+
+<h2>Poruci</h2>
+
+<form method="post" action="~/Potrosac/KreirajPorudzbinu">
+    <table>
+
+        <tr>
+            <td>Sta narucujete(naziv proizvoda):</td>
+            <td>
+                <input list="p" name="ImeProizvoda" />
+                <datalist id="p">
+
+                    @foreach (Proizvod p in @ViewBag.Message)
+                    {
+                        <option value="@p.ImeProizvoda.ToString()"></option>
+                    }
+
+                </datalist>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Kolicina:</td>
+            <td><input type="number" name="Kolicina" /></td>
+        </tr>
+
+
+        <tr>
+            <td>Adresa dostave:</td>
+            <td>
+                <input list="adresa" name="adresa" />
+                <datalist id="adresa">
+                    
+                    <option value="@ViewBag.model.Adresa"></option>
+
+                </datalist>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Komentar:</td>
+            <td>
+                <textarea name="Komentar"></textarea>
+            </td>
+        </tr>
+      
+        <tr>
+            <td></td>
+           <td>
+               
+                   <input  type="submit" value="poruci" />
+               
+           </td>
+        </tr>
+         
+    </table>
+</form>
+

@@ -1,0 +1,17 @@
+﻿body {
+    background-color: lightgoldenrodyellow;
+
+}
+
+p[id='vjubag'] {
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    background-color: indianred;
+    width: 300px;
+    margin-bottom: 30px;
+    border: double;
+    margin: 0px 420px;
+    margin-top:20px;
+}

@@ -1,0 +1,38 @@
+﻿<link rel="stylesheet" href="~/CSS/dodajproizvod.css" type="text/css" />
+@{
+    ViewBag.Title = "DodajProizvod";
+}
+
+<h3>Dodaj Proizvod</h3>
+
+<form method="post" action="~/Admin/DodavanjeProizvoda">
+    <table>
+
+        <tr>
+            <td>Ime proizvoda:</td>
+            <td><input type="text" name="ImeProizvoda" /></td>
+        </tr>
+        
+        <tr>
+            <td>Cena:</td>
+            <td><input type="number" name="CenaProizvoda" /></td>
+        </tr>
+
+       
+        <tr>
+            <td>Sastojci:</td>
+            <td><input type="text" name="Sastojci" /></td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td>
+               
+                <input id="sbm" type="submit" value="dodaj" />
+
+            </td>
+        </tr>
+
+    </table>
+</form>
+

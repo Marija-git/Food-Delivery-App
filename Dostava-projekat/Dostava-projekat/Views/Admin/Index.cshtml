@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Dostava_projekat.Models.KorisnikKojiCekaZahtev>
+<link rel="stylesheet" href="~/CSS/adminindex.css" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Zahtevi za registraciju dostavljaca</h4>
+
+<table border="1">
+
+    <tr>
+        <th>Korisnicko ime</th>
+        <th>Email</th>
+        <th>Lozinka</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Datum rodjenja</th>
+        <th>Adresa</th>
+        <th>Tip</th>
+        <th>Status zahteva</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    
+    </tr>
+
+   
+    @foreach(Dostava_projekat.Models.KorisnikKojiCekaZahtev item in Model)
+    {
+
+<tr>
+    <td>@item.KorisnickoIme</td>
+    <td>@item.Email</td>
+    <td>@item.Lozinka</td>
+    <td>@item.Ime</td>
+    <td>@item.Prezime</td>
+    <td>@item.DatumRodjenja</td>
+    <td>@item.Adresa</td>
+    <td>@item.Tip</td>
+    <td>@item.StatusZahteva</td>
+
+    @if (item.StatusZahteva == "U PROCESU")
+    {
+        <td>
+            <form method="post" action="~/Admin/PrihvatiZahtev">
+                <input type="submit" value="prihvati" />
+                <input type="hidden" name="KorisnickoIme" value="@item.KorisnickoIme" />
+            </form>
+        </td>
+    }
+    else
+    {
+        <td>X</td>
+    }
+
+
+    @if (item.StatusZahteva == "U PROCESU")
+    {
+
+        <td>
+            <form method="post" action="~/Admin/OdbijZahtev">
+                <input type="submit" value="odbij" />
+                <input type="hidden" name="KorisnickoIme" value="@item.KorisnickoIme" />
+            </form>
+        </td>
+    }
+    else
+    {
+        <td>X</td>
+    }
+
+
+
+
+</tr>
+    }
+
+</table>
+
+
+

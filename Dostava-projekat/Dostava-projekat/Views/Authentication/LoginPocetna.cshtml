@@ -1,0 +1,39 @@
+﻿<link rel="stylesheet" href="~/CSS/loginpocetna.css" type="text/css" />
+@{
+    ViewBag.Title = "LoginPocetna";
+}
+
+
+
+<h3>LogIn</h3>
+<br />
+
+<div id="vjubag">
+    @ViewBag.Message
+</div>
+
+<form id="f1" action="~/Authentication/Login" method="post">
+    <table>
+        <tr id="tr1">
+            <td id="email">Email:</td>
+            <td><input type="email" name="email" /></td>
+        </tr>
+        <tr>
+            <td id="lozinka">Lozinka:</td>
+            <td><input type="password" name="lozinka" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input id="sbm" type="submit" value="Login" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<div id="reg">
+    <p>Niste registrovani?</p>
+   <form method="post" action="~/Authentication/Register">
+       <input id="reg" type="submit" value="Register" />
+   </form>
+</div>
+
