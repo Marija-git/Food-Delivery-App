@@ -9,7 +9,7 @@ Korisnici aplikacije su: admin,dostavljac i potrosac. U zavisnosti od uloge su i
 
 Aplikacija sadrzi registraciju i prijavljivanje na sistem.
 
-Osatlo za doradu:
+Ostalo za doradu:
 
    1.stoperica (kada dostavljac prihvati dostavu krece odbrojavanje na ekranu korisnika i dostavljaca)
  
