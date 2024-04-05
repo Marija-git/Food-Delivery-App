@@ -226,6 +226,8 @@
     <Content Include="CSS\adminindex.css" />
     <Content Include="CSS\dodajproizvod.css" />
     <Content Include="CSS\dostavljacpage.css" />
+    <Content Include="CSS\loginform.css" />
+    <Content Include="CSS\loginform2.css" />
     <Content Include="CSS\loginpocetna.css" />
     <Content Include="CSS\porucivanje2.css" />
     <Content Include="CSS\potrosacpage.css" />
