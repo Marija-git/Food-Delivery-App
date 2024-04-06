@@ -3,29 +3,23 @@
     ViewBag.Title = "DodajProizvod";
 }
 
-<h3>Dodaj Proizvod</h3>
-
-<form method="post" action="~/Admin/DodavanjeProizvoda">
+<form method="post" action="~/Admin/DodavanjeProizvoda"> <span>Add new article</span>
     <table>
 
         <tr>
-            <td>Ime proizvoda:</td>
-            <td><input type="text" name="ImeProizvoda" /></td>
+            <td><input type="text" name="ImeProizvoda" placeholder="article name" /></td>
         </tr>
         
         <tr>
-            <td>Cena:</td>
-            <td><input type="number" name="CenaProizvoda" /></td>
+            <td><input type="number" name="CenaProizvoda" placeholder="price" /></td>
         </tr>
 
        
         <tr>
-            <td>Sastojci:</td>
-            <td><input type="text" name="Sastojci" /></td>
+            <td><input type="text" name="Sastojci"  placeholder="ingredients"/></td>
         </tr>
         
         <tr>
-            <td></td>
             <td>
                
                 <input id="sbm" type="submit" value="dodaj" />

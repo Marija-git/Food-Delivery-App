@@ -1,48 +1,41 @@
 ﻿@model Dostava_projekat.Models.Korisnik
-<link rel="stylesheet" href="~/CSS/register.css" type="text/css" />
+<link rel="stylesheet" href="~/CSS/register2.css" type="text/css" />
 @{
     ViewBag.Title = "Register";
 }
 
-<h3>Register</h3>
 <div>
     @ViewBag.Message
 </div>
 
-<form action="~/Authentication/RegistracijaKorisnika" method="post">
+<form action="~/Authentication/RegistracijaKorisnika" method="post"> <span>Sign up</span>
     <table>
         <tr>
-            <td>Korisinicko ime:</td>
             <td>
-                <input type="text" name="korisnickoIme"
+                <input type="text" name="korisnickoIme" placeholder="user name"
             </td>
         </tr>
         <tr>
-            <td>Lozinka</td>
             <td>
-                <input type="password" name="lozinka"
+                <input type="password" name="lozinka" placeholder="password"
             </td>
         </tr>
         <tr>
-            <td>Lozinka</td>
-           <td> <input type="password" name="nekalozinka" /></td>
+           <td> <input type="password" name="nekalozinka" placeholder="password" /></td>
         </tr>
         <tr>
-            <td>Ime</td>
             <td>
-                <input type="text" name="ime"
+                <input type="text" name="ime" placeholder="name"
             </td>
         </tr>
         <tr>
-            <td>Prezime</td>
             <td>
-                <input type="text" name="prezime"
+                <input type="text" name="prezime" placeholder="surname"
             </td>
         </tr>
         <tr>
-            <td>Tip</td>
             <td>
-                <input list="tip" name="tip" />
+                <input list="tip" name="tip" placeholder="role"/>
                 <datalist id="tip">
                     <option value="Administrator"></option>
                     <option value="Dostavljac"></option>
@@ -51,23 +44,21 @@
             </td>
         </tr>
         <tr>
-            <td>Email</td>
             <td>
-                <input type="email" name="email" />
+                <input type="email" name="email" placeholder="email"/>
             </td>
         </tr>
         <tr>
-            <td>Datum rodjenja</td>
-            <td>  <input type="date" name="DatumRodjenja" /></td>
+            <td> 
+            <input type="date" name="DatumRodjenja" placeholder="date of birth" />
+            </td>
         </tr>
         <tr>
-            <td>Adresa</td>
-            <td><input type="text" name="Adresa" /></td>
+            <td><input type="text" name="Adresa" placeholder="address"/></td>
         </tr>
         <tr>
-            <td></td>
             <td>
-                <input id="sbm" type="submit" value="Register" />
+                <input id="sbm" type="submit" value="sign up" />
             </td>
         </tr>
     </table>

@@ -16,20 +16,25 @@ form {
     padding: 20px; /*prostor oko forme*/
 }
 
-
 table {
     width: 100%; /*sirina tabele unutar forme*/
 }
-
 td {
     padding: 8px; /*prostor izmedju celija*/
 }
-input[type=submit] {
+#sbm {
     display: block;
     width: 100%; /*sirina dugmeta unutar forme*/
     margin: 0 auto; /*centriraj dugme unutar forme*/
 }
+#sbm:hover, #reg:hover {
+        background-color: seagreen;
+}
 
-input[type=submit]:hover {
-    background-color: seagreen;
+input[id='imgPath']
+{
+    display:block;
+    margin-left:100px;
+    width:60%;
+    
 }

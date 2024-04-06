@@ -5,25 +5,15 @@
     ViewBag.Title = "AdminPage";
 }
 
-<h2>Admin</h2>
-
-
-
 @if (ViewBag.model.ImagePath != null)
 {
-    <div id="div1">
-
-        <div id="div2">
-            <p>Profilna slika:</p><br />
-            <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="error" style="width:100px;height:100px;" />
+        <div class="pic">
+            <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="chosen pic" />
         </div>
 
-
-
-    </div>
 }
 
-<div id="div3">
+<div class="change">
     <ul>
         <li> <a id="a1" href="~/Korisnik/Profil">Azuriranje profila</a></li>
         <li>  <a id="a2" href="~/Admin/Index">Zahtevi za registraciju</a></li>
@@ -34,14 +24,14 @@
 
 <hr />
 
-<h4 id="prvi">Svi proizvodi</h4>
+<h4 id="prvi">All articles</h4>
 <form method="post" action="~/Admin/DodajProizvod">
 
     <table id="t1" border="1">
         <tr>
-            <th>Ime</th>
-            <th>Cena</th>
-            <th>Sastojci</th>
+            <th>Article</th>
+            <th>Price</th>
+            <th>Ingredients</th>
         </tr>
         @foreach (Proizvod p in ViewBag.proizvodi)
         {
@@ -53,14 +43,14 @@
         }
     </table>
 
-    <input type="submit" value="Dodaj novi proizovd" />
+    <input type="submit" value="Add new article" />
 </form>
 
 
 
 
 <hr />
-<h4>Sve porudzbine</h4>
+<h4>All orders</h4>
 <table id="t2" border="1">
     <tr>
         <th>Sta ste porucili</th>

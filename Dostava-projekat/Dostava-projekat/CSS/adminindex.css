@@ -1,45 +1,51 @@
 ﻿body {
-    background-color: lightgoldenrodyellow;
+    background-color: seagreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: sans-serif;
 }
 
 h4 {
-    font-size: 30px;
-    text-decoration-line: underline;
-    margin-left: 340px;
-    background-color: lightsalmon;
-    width: 470px;
-    height: 50px;
-    margin-top: 20px;
-    border-radius: 12px;
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 18px;
-    font-family: sans-serif;
-    min-width: 600px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-top:50px;
-}
-
-table tr {
-    border: 3px solid black;
-    background-color: antiquewhite;
-}
-
-table th {
-    background-color: aquamarine;
+    border: 5px solid wheat;
     text-align: center;
+    max-width: 100%;
+    margin: 0 auto 10px; /*centriranje tabele*/
+    padding: 20px; /*prostor oko tabele*/
+}
+th {
+    padding: 8px; /*prostor izmedju celija*/
+    background-color: #f2f2f2
 }
 
-table input[type=submit] {
-    color: lightsalmon;
-    width: 100%;
-    background-color: whitesmoke;
-    border: 3px solid aquamarine;
-    border-radius: 10px;
+td {
+    padding: 8px; /*prostor izmedju celija*/
 }
-table input[type=submit]:hover {
-    background-color: rgb(0, 255, 212);
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
 }
+td {
+    background-color: wheat;
+}
+td:hover {
+        background-color: #f2f2f2;
+}
+input {
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
+    input:hover {
+        color: black;
+    }

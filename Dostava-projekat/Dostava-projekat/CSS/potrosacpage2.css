@@ -5,82 +5,84 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: sans-serif;
+    font-family: sans-serif; 
+    
 }
+
 .pic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:200px;
+    height:200px;
+
     border: 5px solid wheat;
     text-align: center;
     max-width: 400px;
     margin: 0 auto 10px; /*centriranje diva*/
-    margin-bottom: 3%;
+    margin-bottom:3%;
 }
-
 img {
     border: 5px solid wheat;
 }
-
 .change {
     display: flex;
     justify-content: center;
     max-width: 400px;
-    margin: 0 auto; /*centriranje diva*/
+    margin: 0 auto; /*centriranje diva*/  
 }
-a {
-    cursor: pointer;
-    text-decoration: none;
-    color: wheat;
+ul{
+    margin: 0 auto;
+    list-style:none;
 }
-a:hover {
-        text-decoration: none;
-        color: black;
-
+a{
+    cursor:pointer;
+    text-decoration:none;
+    color:wheat;
 }
-
+a:hover{
+    text-decoration:none;
+    color:black;
+}
+input {
+    background-color: transparent;
+    border:none;
+    cursor: pointer; 
+    color:wheat;
+}
+input:hover{
+    color:black;
+}
 h4 {
     color: wheat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center; 
 }
 table {
     text-align: center;
-    max-width: 400px;
+    max-width: 800px;
     margin: 0 auto 10px; /*centriranje tabele*/
     border: 5px solid wheat;
-    color: black;
-    
+    color:black;
+    width:100%;
 }
-
 th {
     padding: 8px; /*prostor izmedju celija*/
     background-color: #f2f2f2
 }
-
 th, td {
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     border: 1px solid #ddd;
 }
-.cv,td {
+.cv {
     background-color: wheat;
 }
- .cv:hover,td:hover {
-        background-color: #f2f2f2;
+.cv:hover {
+    background-color: #f2f2f2;
+    
 }
 
 
-input {
-    border: none;
-    cursor: pointer;
-    color: black;
-}
 
-input:hover {
-        background-color: black;
-        color:wheat;
-}

@@ -1,49 +1,40 @@
 ﻿@model IEnumerable<Dostava_projekat.Models.Porudzbina>
-<link rel="stylesheet" href="~/CSS/potrosacpage.css" type="text/css" />
+<link rel="stylesheet" href="~/CSS/potrosacpage2.css" type="text/css" />
 @{
     ViewBag.Title = "Potrosac";
 }
 
-<h2>Potrosac</h2>
-
 @if (ViewBag.model.ImagePath != null)
 {
-    <div id="div1">
-
-        <div id="div2">
-            <p>Profilna slika:</p><br />
-            <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="error" style="width:100px;height:100px;" />
-        </div>
-
+    <div class="pic">
+        <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="chosen picture" />
     </div>
+
 }
-<div id="div3">
+<div class="change">
     <ul>
         <li>
-            <a id="a1" href="~/Korisnik/Profil">Azuriranje profila</a>
+            <a id="a1" href="~/Korisnik/Profil">Update profile</a>
         </li>
         <li>
             <form method="post" action="~/Potrosac/Poruci">
-                <input type="submit" value="Poruci" />
+                <input type="submit" value="Order food" />
             </form>
         </li>
     </ul>
 </div>
 
-
-
-
 <hr />
-<h4>Prikaz sivh ZAVRSENIH dostava(porudzbina)</h4>
+<h4>All your completed deliveries</h4>
 
 <table border="1">
     <tr>
-        <th>Sta ste porucili</th>
-        <th>Kolicina</th>
-        <th>Adresa</th>
-        <th>Komentar</th>
-        <th>Cena porudzbine</th>
-        <th>Status porudzbine</th>
+        <th>Order</th>
+        <th>Anount</th>
+        <th>Address</th>
+        <th>Comment</th>
+        <th>Price</th>
+        <th>Delivery status</th>
     </tr>
 
     @foreach (Dostava_projekat.Models.Porudzbina item in Model)
@@ -52,7 +43,7 @@
 
         if (item.Status == "ZAVRSENO" && @ViewBag.model.Adresa == item.Adresa)
         {
-            <tr>
+            <tr class="cv">
                 <td>@item.StaPorucuje</td>
                 <td>@item.Kolicina</td>
                 <td>@item.Adresa</td>
@@ -64,5 +55,4 @@
     }
 </table>
 
-<hr />
 

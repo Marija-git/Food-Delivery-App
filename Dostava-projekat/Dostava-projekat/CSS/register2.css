@@ -16,7 +16,6 @@ form {
     padding: 20px; /*prostor oko forme*/
 }
 
-
 table {
     width: 100%; /*sirina tabele unutar forme*/
 }
@@ -24,12 +23,12 @@ table {
 td {
     padding: 8px; /*prostor izmedju celija*/
 }
-input[type=submit] {
-    display: block;
-    width: 100%; /*sirina dugmeta unutar forme*/
-    margin: 0 auto; /*centriraj dugme unutar forme*/
-}
 
-input[type=submit]:hover {
-    background-color: seagreen;
+#sbm{
+    display:block;
+    width:100%;
+    margin: 0 auto;
+}
+#sbm:hover{
+    background-color:seagreen;
 }

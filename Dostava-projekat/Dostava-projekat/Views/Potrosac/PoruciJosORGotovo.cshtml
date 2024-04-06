@@ -3,11 +3,12 @@
     ViewBag.Title = "PoruciJosORGotovo";
 }
 
-<h2>Poruci jos?</h2>
+<div class="d1">
+    <a id="a1" href="~/Potrosac/Poruci">Would you like to order anything else?</a>
 
-<a id="a1" href="~/Potrosac/Poruci">Poruci jos?</a>
+    <form method="post" action="~/Potrosac/ZavrsiPorudzbinu">
+        <input type="submit" value="Complete order?" />
+    </form>
 
-<form method="post" action="~/Potrosac/ZavrsiPorudzbinu">
-    <input type="submit" value="Zavrsi porudzbinu?" />
-</form>
+</div>
 

@@ -3,36 +3,32 @@
     ViewBag.Title = "DostavljacPage";
 }
 
-<h2>Dostavljac</h2>
-
-
 @if (ViewBag.model.ImagePath != null)
 {
-<div id="div1">
-    <div id="div2">
-        <p>Profilna slika:</p><br />
-        <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="error" style="width:100px;height:100px;" />
+
+    <div class="pic">
+        <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="chosen pic" />
     </div>
 
-</div>
+
 }
 
 
-<div id="div3">
-    <a id="a1" href="~/Korisnik/Profil">Azuriranje profila</a>    
+<div class="change">
+    <a id="a1" href="~/Korisnik/Profil">Update profile</a>    
 </div>
 
 
 <hr />
-<h4>Sve porudzbine na cekanju (u toku)</h4>
+<h4>All orders pending</h4>
 <table id="t1" border="1">
     <tr>
-        <th>Sta ste porucili</th>
-        <th>Kolicina</th>
-        <th>Adresa</th>
-        <th>Komentar</th>
-        <th>Cena porudzbine</th>
-        <th>Status porudzbine</th>
+        <th>Article name</th>
+        <th>Amount</th>
+        <th>Address</th>
+        <th>Commnet</th>
+        <th>Price</th>
+        <th>Delivery status</th>
         <th>&nbsp;</th>
     </tr>
 
@@ -40,7 +36,7 @@
     {
         if (item.Status == "U TOKU")
         {
-            <tr>
+            <tr class="cv">
                 <td>@item.StaPorucuje</td>
                 <td>@item.Kolicina</td>
                 <td>@item.Adresa</td>
@@ -50,7 +46,7 @@
 
                 <td>
                     <form method="post" action="Prihvati">
-                        <input type="submit" value="prihvati" />
+                        <input type="submit" value="accept" />
                         <input type="hidden" name="PorudzbinaId" value="@item.PorudzbinaId" />
                     </form>
                 </td>
@@ -70,16 +66,16 @@
 
     if (item.Status == "ZAPOCETO" && item.DostavljacKojiMePokupio == @ViewBag.model.KorisnickoIme)
     {
-        <h3>Trenutna porudzbina</h3>
+        <h4>Current order</h4>
        
             <table id="t2" border="1">
                 <tr>
-                    <th>Sta je poruceno</th>
-                    <th>Kolicina</th>
-                    <th>Adresa</th>
-                    <th>Komentar</th>
-                    <th>Cena porudzbine</th>
-                    <th>Status porudzbine</th>
+                    <th>Article name</th>
+                    <th>Amount</th>
+                    <th>Address</th>
+                    <th>Comment</th>
+                    <th>Price</th>
+                    <th>Delivery status</th>
                     <th>&nbsp;</th>
 
                 </tr>
@@ -98,18 +94,13 @@
                             <input type="hidden" name="PorudzbinaId" value="@item.PorudzbinaId" />
                         </form>
 
-                    </td>
-                       
-                
-
+                    </td>                                    
                 </tr>
-
-            </table>
+           </table>
         
     }
 }
 
-<hr />
 
 
 

@@ -232,9 +232,11 @@
     <Content Include="CSS\porucivanje2.css" />
     <Content Include="CSS\potrosacpage.css" />
     <Content Include="CSS\profil.css" />
+    <Content Include="CSS\profil2.css" />
     <Content Include="CSS\provera.css" />
     <Content Include="CSS\proverastatusa.css" />
     <Content Include="CSS\register.css" />
+    <Content Include="CSS\register2.css" />
     <Content Include="CSS\registererror.css" />
     <Content Include="CSS\porucivanje.css" />
     <Content Include="favicon.ico" />

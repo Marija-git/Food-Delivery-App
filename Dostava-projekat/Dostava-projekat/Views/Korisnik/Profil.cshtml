@@ -1,45 +1,35 @@
-﻿<link rel="stylesheet" href="~/CSS/profil.css" type="text/css" />
+﻿<link rel="stylesheet" href="~/CSS/profil2.css" type="text/css" />
 @model Dostava_projekat.Models.Korisnik
 @{
     ViewBag.Title = "Profil";
 }
 
-<h3>Izmeni profil</h3>
-
-<form action="~/Korisnik/IzmeniProfil" method="post">
+<form action="~/Korisnik/IzmeniProfil" method="post"> <span>Update your profile</span>
     <table>
       
         <tr>
-            <td>Email</td>
-            <td><input type="email" name="email" value="@Model.Email" /></td>
+            <td><input type="email" name="email" value="@Model.Email" placeholder="email" /></td>
         </tr>
         <tr>
-            <td>Lozinka</td>
-            <td><input type="text" name="lozinka" value="@Model.Lozinka" /> </td>
+            <td><input type="text" name="lozinka" value="@Model.Lozinka" placeholder="password"/> </td>
         </tr>
         <tr>
-            <td>Ime</td>
-            <td><input type="text" name="ime" value="@Model.Ime" /> </td>
+            <td><input type="text" name="ime" value="@Model.Ime" placeholder="name" /> </td>
         </tr>
         <tr>
-            <td>Prezime</td>
-            <td><input type="text" name="prezime" value="@Model.Prezime" /> </td>
+            <td><input type="text" name="prezime" value="@Model.Prezime" placeholder="surname" /> </td>
         </tr>
        
         <tr>
-
-            <td>Datum rodjenja</td>
-            <td><input type="date" name="DatumRodjenja" value="@Model.DatumRodjenja.ToString("yyyy-MM-dd")" /> </td>
+            <td><input type="date" name="DatumRodjenja" value="@Model.DatumRodjenja.ToString("yyyy-MM-dd")" placeholder="date of birth"/> </td>
         </tr>
         <tr>
-            <td>Adresa</td>
-            <td><input type="text" name="adresa" value="@Model.Adresa" /></td>
+            <td><input type="text" name="adresa" value="@Model.Adresa"  placeholder="address"/></td>
         </tr>
 
         <tr>
-            <td>ImagePath</td>
             <td>
-                <label for="imgPath">Dodaj sliku</label>
+                <label for="imgPath">Add picture</label>
                 <input type="file" id="imgPath" name="imgPath" accept="image/*" />
             </td>
         </tr>

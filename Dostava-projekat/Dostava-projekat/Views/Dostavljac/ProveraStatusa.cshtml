@@ -3,22 +3,20 @@
     ViewBag.Title = "ProveraStatusa";
 }
 
-<h2>Provera Statusa</h2>
-<p>Unesite trazene podatke koje ste uneli prilikom registracije</p>
 
-<form action="~/Dostavljac/StatusVerifikacije" method="post">
+<p>Enter the requested information you provided during registration</p>
+
+<form action="~/Dostavljac/StatusVerifikacije" method="post"> <span>Check status</span>
     <table>
         <tr>
-            <td>Email:</td>
-            <td><input type="email" name="email" /></td>
+            <td><input type="email" name="email" placeholder="email"/></td>
         </tr>
         <tr>
-            <td>Lozinka:</td>
-            <td><input type="password" name="lozinka" /></td>
+            <td><input type="password" name="lozinka" placeholder="password" /></td>
         </tr>
         <tr>
             <td colspan="2">
-                <input type="submit" value="Proveri status" />
+                <input type="submit" value="check" />
             </td>
         </tr>
     </table>
