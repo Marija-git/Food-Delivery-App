@@ -77,7 +77,7 @@ namespace Dostava_projekat.Controllers
                 KorisnikKojiCekaZahtev k = korisnici.Find(u => u.Email.Equals(email) && u.Lozinka.Equals(lozinka));
                 if (k == null)
                 {
-                    ViewBag.Message = $"Niste se nikad prijavili!";
+                    ViewBag.Message = $"You have never applied!";
                     return View("~/Views/Authentication/Provera.cshtml");
                 }
 

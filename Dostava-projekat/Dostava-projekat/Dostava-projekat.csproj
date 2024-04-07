@@ -231,6 +231,7 @@
     <Content Include="CSS\loginpocetna.css" />
     <Content Include="CSS\porucivanje2.css" />
     <Content Include="CSS\potrosacpage.css" />
+    <Content Include="CSS\potrosacpage2.css" />
     <Content Include="CSS\profil.css" />
     <Content Include="CSS\profil2.css" />
     <Content Include="CSS\provera.css" />

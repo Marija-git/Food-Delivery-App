@@ -135,14 +135,5 @@ namespace Dostava_projekat.Controllers
             return View("~/Views/Authentication/Provera.cshtml");
         }
 
-
-
-
-
-
-
-
-
-
     }
 }
