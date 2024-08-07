@@ -1,6 +1,8 @@
 # Food Delivery App (web2 faculty project)
 Food delivery App / Aplikacija za dostavu hrane
-Tehnologije: Entity Framework, MS SQL Server, MVC architecture, C#, ASP.NET, HTML, CSS
+
+# Tehnologije: Entity Framework, MS SQL Server, MVC architecture, C#, ASP.NET, HTML, CSS
+
 Korisnici aplikacije su: Administrator, Dostavljač i Potrošač. U zavisnosti od uloge su implementirane odredjene funkcionalnosti.
 
 __Opis projekta__
