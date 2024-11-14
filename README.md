@@ -11,6 +11,7 @@
 
 - **Access the homepage**: Unregistered users can either log in (if they are already registered) or create an account to join the system.
 - **Login**: Login is performed via email and password.
+- ![login_form](https://github.com/user-attachments/assets/25a4dddb-ce82-4f96-81fe-ab34f710bcea) ![signup_form](https://github.com/user-attachments/assets/9c970303-38fb-4944-bcb9-f508ffb30887)
 
 ### **Logged-In User**
 
