@@ -1,88 +1,135 @@
-﻿body {
-    background-color: seagreen;
+﻿
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: sans-serif; 
-    
 }
 
-.pic {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:200px;
-    height:200px;
-
-    border: 5px solid wheat;
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
-    max-width: 400px;
-    margin: 0 auto 10px; /*centriranje diva*/
-    margin-bottom:3%;
 }
-img {
-    border: 5px solid wheat;
+
+
+.profile-pic {
+    text-align: center;
+    margin-bottom: 20px;
 }
+
+    .profile-pic img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+
 .change {
     display: flex;
     justify-content: center;
-    max-width: 400px;
-    margin: 0 auto; /*centriranje diva*/  
+    gap: 20px;
+    margin: 20px 0;
 }
-ul{
-    margin: 0 auto;
-    list-style:none;
-}
-a{
-    cursor:pointer;
-    text-decoration:none;
-    color:wheat;
-}
-a:hover{
-    text-decoration:none;
-    color:black;
-}
-input {
-    background-color: transparent;
-    border:none;
-    cursor: pointer; 
-    color:wheat;
-}
-input:hover{
-    color:black;
-}
-h4 {
-    color: wheat;
-    display:flex;
-    justify-content:center;
-    align-items:center; 
-}
-table {
-    text-align: center;
+
+    .change ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 15px;
+    }
+
+        .change ul li a,
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            color: #4CAF50;
+            background-color: #fff;
+            border: 1px solid #4CAF50;
+        }
+
+            .change ul li a:hover,
+            .btn-primary:hover {
+                background-color: #4CAF50;
+                color: #fff;
+            }
+
+
+.orders-table {
+    width: 100%;
     max-width: 800px;
-    margin: 0 auto 10px; /*centriranje tabele*/
-    border: 5px solid wheat;
-    color:black;
-    width:100%;
-}
-th {
-    padding: 8px; /*prostor izmedju celija*/
-    background-color: #f2f2f2
-}
-th, td {
-    padding: 10px;
-    text-align: center;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
 }
-.cv {
-    background-color: wheat;
+
+    .orders-table th, .orders-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .orders-table th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    .orders-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .orders-table tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    .orders-table tr:hover {
+        background-color: #e0f7fa;
+    }
+
+.completed-order {
+    background-color: #e8f5e9;
 }
-.cv:hover {
-    background-color: #f2f2f2;
-    
+
+    .completed-order td {
+        color: #388e3c;
+    }
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .change ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .orders-table th, .orders-table td {
+        padding: 8px;
+    }
+
+    .orders-table {
+        font-size: 14px;
+    }
 }
-
-
-

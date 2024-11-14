@@ -4,43 +4,33 @@
     ViewBag.Title = "Profil";
 }
 
-<form action="~/Korisnik/IzmeniProfil" method="post"> <span>Update your profile</span>
-    <table>
-      
-        <tr>
-            <td><input type="email" name="email" value="@Model.Email" placeholder="email" /></td>
-        </tr>
-        <tr>
-            <td><input type="text" name="lozinka" value="@Model.Lozinka" placeholder="password"/> </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="ime" value="@Model.Ime" placeholder="name" /> </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="prezime" value="@Model.Prezime" placeholder="surname" /> </td>
-        </tr>
-       
-        <tr>
-            <td><input type="date" name="DatumRodjenja" value="@Model.DatumRodjenja.ToString("yyyy-MM-dd")" placeholder="date of birth"/> </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="adresa" value="@Model.Adresa"  placeholder="address"/></td>
-        </tr>
+<form action="~/Korisnik/IzmeniProfil" method="post" class="profile-form">
+    <h2>Update Your Profile</h2>
 
-        <tr>
-            <td>
-                <label for="imgPath">Add picture</label>
-                <input type="file" id="imgPath" name="imgPath" accept="image/*" />
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <input id="sbm" type="submit" value="izmeni" />
-                <input id="sbm" type="hidden" name="KorisnickoIme" value="@Model.KorisnickoIme" />
-            </td>
-        </tr>
-
-
-    </table>
+    <div class="form-group">
+        <input type="email" name="email" value="@Model.Email" placeholder="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="password" name="lozinka" value="@Model.Lozinka" placeholder="Password" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="ime" value="@Model.Ime" placeholder="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="prezime" value="@Model.Prezime" placeholder="Surname" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="date" name="DatumRodjenja" value="@Model.DatumRodjenja.ToString("yyyy-MM-dd")" placeholder="Date of Birth" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="adresa" value="@Model.Adresa" placeholder="Address" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="imgPath">Add Picture</label>
+        <input type="file" id="imgPath" name="imgPath" accept="image/*" class="form-control-file" />
+    </div>
+    <div class="form-actions">
+        <input type="submit" value="Update" class="btn btn-primary" />
+        <input type="hidden" name="KorisnickoIme" value="@Model.KorisnickoIme" />
+    </div>
 </form>

@@ -1,33 +1,66 @@
-﻿body {
-    background-color: seagreen;
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    font-family: sans-serif;
+    color: #333;
 }
+
+
 form {
-    border: 5px solid wheat;
-    text-align: center;
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
     max-width: 400px;
-    margin: 0 auto 10px; /*centriranje forme*/
-    padding: 20px; /*prostor oko forme*/
+    text-align: center;
 }
+
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
 table {
-    width: 100%; /*sirina tabele unutar forme*/
+    width: 100%;
 }
 
-td {
-    padding: 8px; /*prostor izmedju celija*/
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-#sbm, #reg {
-    display: block;
-    width: 100%; /*sirina dugmeta unutar forme*/
-    margin: 0 auto; /*centriraj dugme unutar forme*/
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-    #sbm:hover, #reg:hover {
-        background-color: seagreen;
+    input[type="submit"]:hover {
+        background-color: #0056b3;
     }

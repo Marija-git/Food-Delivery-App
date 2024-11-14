@@ -1,34 +1,63 @@
-﻿body {
-    background-color: seagreen;
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: sans-serif;
+    min-height: 100vh;
+    background-color: #f0f2f5;
 }
 
-form {
-    border: 5px solid wheat;
+
+.register-container {
+    background-color: #fff;
+    padding: 20px;
+    width: 320px;
     text-align: center;
-    max-width: 400px;
-    margin: 0 auto 10px; /*centriranje forme*/
-    padding: 20px; /*prostor oko forme*/
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-table {
-    width: 100%; /*sirina tabele unutar forme*/
+    
+    .register-container h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+
+.input-group {
+    margin-bottom: 15px;
 }
 
-td {
-    padding: 8px; /*prostor izmedju celija*/
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+
+#sbm {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #28a745;
+    transition: background-color 0.3s ease;
 }
 
-#sbm{
-    display:block;
-    width:100%;
-    margin: 0 auto;
-}
-#sbm:hover{
-    background-color:seagreen;
-}
+    #sbm:hover {
+        background-color: #218838;
+    }

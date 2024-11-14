@@ -25,13 +25,13 @@ namespace Dostava_projekat.Controllers
             Korisnik korisnik = (Korisnik)Session["korisnik"];
             if (korisnik == null || korisnik.KorisnickoIme == "")
             {
-                ViewBag.Message = "Morate se ulogovati kao dostavljac";
+                ViewBag.Message = "You have to login as delivery person.";
                 return View("~/Views/Authentication/LoginPocetna.cshtml");
             }
 
             if (korisnik.Tip != "Dostavljac")
             {
-                ViewBag.Message = "Nemas prava za ovo jer nisi dostavljac";
+                ViewBag.Message = "This is for delivery person only.";
                 return View("~/Views/Authentication/LoginPocetna.cshtml");
             }
 
@@ -49,7 +49,7 @@ namespace Dostava_projekat.Controllers
             {
                 if (pp.DostavljacKojiMePokupio == korisnik.KorisnickoIme && pp.Status == "ZAPOCETO")
                 {
-                    ViewBag.Message = "Ne moze ! Vec imate porudzbinu koja je U TOKU.";
+                    ViewBag.Message = "You already have a pending order.";
                     return View("~/Views/Authentication/Provera.cshtml");
                 }
             }
@@ -59,7 +59,7 @@ namespace Dostava_projekat.Controllers
             p.DostavljacKojiMePokupio = korisnik.KorisnickoIme;
             db.SaveChanges();
               
-            ViewBag.Message = "Prihvatili ste porudzbinu";
+            ViewBag.Message = "You accepted the order succesfully.";
             return View("~/Views/Authentication/Provera.cshtml");
 
         }
@@ -82,7 +82,7 @@ namespace Dostava_projekat.Controllers
                 }
 
             string status = k.StatusZahteva.ToString();
-                ViewBag.Message = $"Vas zahtev je {status}";
+                ViewBag.Message = $"Your status : {status}";
                 return View("~/Views/Authentication/Provera.cshtml");
             
         }
@@ -97,7 +97,7 @@ namespace Dostava_projekat.Controllers
             p.DostavljacKojiMePokupio = null;
             db.SaveChanges();
 
-            ViewBag.Message = "Naruzbina je zavrsena";
+            ViewBag.Message = "Order is done.";
             return View("~/Views/Authentication/Provera.cshtml");
         }
 

@@ -6,53 +6,54 @@
 
 @if (ViewBag.model.ImagePath != null)
 {
-    <div class="pic">
+    <div class="profile-pic">
         <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="chosen picture" />
     </div>
-
 }
+
 <div class="change">
     <ul>
         <li>
-            <a id="a1" href="~/Korisnik/Profil">Update profile</a>
+            <a id="a1" href="~/Korisnik/Profil" class="btn-link">Update profile</a>
         </li>
         <li>
             <form method="post" action="~/Potrosac/Poruci">
-                <input type="submit" value="Order food" />
+                <input type="submit" value="Order food" class="btn btn-primary" />
             </form>
         </li>
     </ul>
 </div>
 
 <hr />
-<h4>All your completed deliveries</h4>
 
-<table border="1">
-    <tr>
-        <th>Order</th>
-        <th>Anount</th>
-        <th>Address</th>
-        <th>Comment</th>
-        <th>Price</th>
-        <th>Delivery status</th>
-    </tr>
+<h4>Your Completed Deliveries</h4>
 
-    @foreach (Dostava_projekat.Models.Porudzbina item in Model)
-    {
-        //prepravi u zavrseno
-
-        if (item.Status == "ZAVRSENO" && @ViewBag.model.Adresa == item.Adresa)
+<table class="orders-table">
+    <thead>
+        <tr>
+            <th>Order</th>
+            <th>Amount</th>
+            <th>Address</th>
+            <th>Comment</th>
+            <th>Price</th>
+            <th>Delivery Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Dostava_projekat.Models.Porudzbina item in Model)
         {
-            <tr class="cv">
-                <td>@item.StaPorucuje</td>
-                <td>@item.Kolicina</td>
-                <td>@item.Adresa</td>
-                <td>@item.Komentar</td>
-                <td>@item.CenaPorudzbine</td>
-                <td>@item.Status</td>
-            </tr>
+            if (item.Status == "ZAVRSENO" && @ViewBag.model.Adresa == item.Adresa)
+            {
+                <tr class="completed-order">
+                    <td>@item.StaPorucuje</td>
+                    <td>@item.Kolicina</td>
+                    <td>@item.Adresa</td>
+                    <td>@item.Komentar</td>
+                    <td>@item.CenaPorudzbine</td>
+                    <td>@item.Status</td>
+                </tr>
+            }
         }
-    }
+    </tbody>
 </table>
-
 

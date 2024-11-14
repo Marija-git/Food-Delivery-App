@@ -3,12 +3,10 @@
     ViewBag.Title = "PoruciJosORGotovo";
 }
 
-<div class="d1">
-    <a id="a1" href="~/Potrosac/Poruci">Would you like to order anything else?</a>
+<div class="order-complete-container">
+    <a id="order-again-link" href="~/Potrosac/Poruci">Would you like to order anything else?</a>
 
-    <form method="post" action="~/Potrosac/ZavrsiPorudzbinu">
-        <input type="submit" value="Complete order?" />
+    <form method="post" action="~/Potrosac/ZavrsiPorudzbinu" class="complete-order-form">
+        <input type="submit" value="Complete order?" class="btn btn-primary" />
     </form>
-
 </div>
-

@@ -3,13 +3,15 @@
     ViewBag.Title = "LoginPocetna";
 }
 
-    <form id="f1" action="~/Authentication/Login" method="post"> <span>Login</span>
+<div class="form-container">
+    <form id="f1" action="~/Authentication/Login" method="post">
+        <span class="form-title">Login</span>
         <table>
             <tr id="tr1">
-                <td><input type="email" name="email" placeholder="email" /></td>
+                <td><input type="email" name="email" placeholder="Email" required /></td>
             </tr>
-            <tr>                
-                <td><input type="password" name="lozinka" placeholder="password"/></td>
+            <tr>
+                <td><input type="password" name="lozinka" placeholder="Password" required /></td>
             </tr>
             <tr>
                 <td colspan="2">
@@ -19,9 +21,7 @@
         </table>
     </form>
 
-   
     <form class="reg" method="post" action="~/Authentication/Register">
         <input id="reg" type="submit" value="Sign up" />
     </form>
-
-
+</div>

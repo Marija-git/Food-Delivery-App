@@ -17,13 +17,13 @@ namespace Dostava_projekat.Controllers
             Korisnik korisnik = (Korisnik)Session["korisnik"];
             if (korisnik == null || korisnik.KorisnickoIme == "")
             {
-                ViewBag.Message = "Morate se ulogovati kao admin";
+                ViewBag.Message = "You have to login as Admin";
                 return View("~/Views/Authentication/LoginPocetna.cshtml");
             }
 
             if (korisnik.Tip != "Administrator")
             {
-                ViewBag.Message = "Nemas prava za ovo jer nisi admin";
+                ViewBag.Message = "This is for admin only.";
                 return View("~/Views/Authentication/LoginPocetna.cshtml");
             }
 
@@ -36,8 +36,6 @@ namespace Dostava_projekat.Controllers
         [HttpPost]
         public ActionResult PrihvatiZahtev(string KorisnickoIme)
         {
-            //ViewBag.Message = $" ajde prikazi jebeni string koji si primio :::{KorisnickoIme}";
-            //return View("~/Views/Authentication/Provera.cshtml");
             Korisnik k = new Korisnik();
             foreach (var item in db.KorisniciNaCekanjuOdobrenjaZahteva)
             {
@@ -58,7 +56,7 @@ namespace Dostava_projekat.Controllers
             {
                 if (kk.KorisnickoIme == KorisnickoIme)
                 {
-                    ViewBag.Message = "Korisnik sa ovim korisnickim imenom vec postoji u bazi";
+                    ViewBag.Message = "User with this username already exists.";
                     return View("~/Views/Authentication/Provera.cshtml");
                 }
             }
@@ -70,7 +68,7 @@ namespace Dostava_projekat.Controllers
 
 
             db.SaveChanges();
-            ViewBag.Message = "Korisnik je dodat u bazu registrovanih";
+            ViewBag.Message = "User is successfully added.";
             return View("~/Views/Authentication/Provera.cshtml");
 
         }
@@ -81,7 +79,7 @@ namespace Dostava_projekat.Controllers
             KorisnikKojiCekaZahtev kkcz = db.KorisniciNaCekanjuOdobrenjaZahteva.Where(x => x.KorisnickoIme == KorisnickoIme).FirstOrDefault();
             kkcz.StatusZahteva = "ODBIJEN";
             db.SaveChanges();
-            ViewBag.Message = "Odbili ste zahtev";
+            ViewBag.Message = "You rejected a request.";
             return View("~/Views/Authentication/Provera.cshtml");
         }
 
@@ -90,13 +88,13 @@ namespace Dostava_projekat.Controllers
             Korisnik korisnik = (Korisnik)Session["korisnik"];
             if (korisnik == null || korisnik.KorisnickoIme == "")
             {
-                ViewBag.Message = "Morate se ulogovati kao admin";
+                ViewBag.Message = "You have to login as Admin.";
                 return View("~/Views/Authentication/LoginPocetna.cshtml");
             }
 
             if (korisnik.Tip != "Administrator")
             {
-                ViewBag.Message = "Nemas prava za ovo jer nisi administrator";
+                ViewBag.Message = "This is for admin only.";
                 return View("~/Views/Authentication/LoginPocetna.cshtml");
             }
 
@@ -119,7 +117,7 @@ namespace Dostava_projekat.Controllers
             {
                 if(pp.ImeProizvoda == ImeProizvoda)
                 {
-                    ViewBag.Message = $"Proizvod vec postoji";
+                    ViewBag.Message = $"This article already exists.";
                     return View("~/Views/Authentication/Provera.cshtml");
                 }
             }
@@ -131,7 +129,7 @@ namespace Dostava_projekat.Controllers
             db.Proizvodi.Add(p);
             db.SaveChanges();
 
-            ViewBag.Message = $"Uspesno dodavanje proizvoda";
+            ViewBag.Message = $"New article is sucessfully added.";
             return View("~/Views/Authentication/Provera.cshtml");
         }
 

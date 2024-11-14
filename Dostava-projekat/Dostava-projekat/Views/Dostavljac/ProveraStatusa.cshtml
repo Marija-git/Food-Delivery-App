@@ -6,18 +6,20 @@
 
 <p>Enter the requested information you provided during registration</p>
 
-<form action="~/Dostavljac/StatusVerifikacije" method="post"> <span>Check status</span>
-    <table>
+<form action="~/Dostavljac/StatusVerifikacije" method="post">
+    <span class="form-title">Check Status</span>
+    <table class="form-table">
         <tr>
-            <td><input type="email" name="email" placeholder="email"/></td>
+            <td><input type="email" name="email" placeholder="Email" required /></td>
         </tr>
         <tr>
-            <td><input type="password" name="lozinka" placeholder="password" /></td>
+            <td><input type="password" name="lozinka" placeholder="Password" required /></td>
         </tr>
         <tr>
             <td colspan="2">
-                <input type="submit" value="check" />
+                <input type="submit" value="Check" class="submit-btn" />
             </td>
         </tr>
     </table>
 </form>
+

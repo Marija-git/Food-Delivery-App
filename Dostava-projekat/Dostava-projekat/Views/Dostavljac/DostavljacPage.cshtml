@@ -1,106 +1,94 @@
 ﻿<link rel="stylesheet" href="~/CSS/dostavljacpage.css" type="text/css" />
+
 @{
     ViewBag.Title = "DostavljacPage";
 }
 
 @if (ViewBag.model.ImagePath != null)
 {
-
-    <div class="pic">
-        <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="chosen pic" />
+    <div class="profile-pic">
+        <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="Profile Picture" />
     </div>
-
-
 }
 
-
-<div class="change">
-    <a id="a1" href="~/Korisnik/Profil">Update profile</a>    
+<div class="profile-update">
+    <a id="a1" href="~/Korisnik/Profil" class="btn-update">Update Profile</a>
 </div>
 
-
 <hr />
-<h4>All orders pending</h4>
-<table id="t1" border="1">
-    <tr>
-        <th>Article name</th>
-        <th>Amount</th>
-        <th>Address</th>
-        <th>Commnet</th>
-        <th>Price</th>
-        <th>Delivery status</th>
-        <th>&nbsp;</th>
-    </tr>
 
-    @foreach (Dostava_projekat.Models.Porudzbina item in Model)
-    {
-        if (item.Status == "U TOKU")
+<h4>All Orders Pending</h4>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Article Name</th>
+            <th>Amount</th>
+            <th>Address</th>
+            <th>Comment</th>
+            <th>Price</th>
+            <th>Delivery Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Dostava_projekat.Models.Porudzbina item in Model)
         {
-            <tr class="cv">
-                <td>@item.StaPorucuje</td>
-                <td>@item.Kolicina</td>
-                <td>@item.Adresa</td>
-                <td>@item.Komentar</td>
-                <td>@item.CenaPorudzbine</td>
-                <td>@item.Status</td>
-
-                <td>
-                    <form method="post" action="Prihvati">
-                        <input type="submit" value="accept" />
-                        <input type="hidden" name="PorudzbinaId" value="@item.PorudzbinaId" />
-                    </form>
-                </td>
-
-
-            </tr>
-
-        }
-    }
-</table>
-<hr />
-
-@foreach (Dostava_projekat.Models.Porudzbina item in Model)
-{
-
-    //prepravi u zavrseno
-
-    if (item.Status == "ZAPOCETO" && item.DostavljacKojiMePokupio == @ViewBag.model.KorisnickoIme)
-    {
-        <h4>Current order</h4>
-       
-            <table id="t2" border="1">
-                <tr>
-                    <th>Article name</th>
-                    <th>Amount</th>
-                    <th>Address</th>
-                    <th>Comment</th>
-                    <th>Price</th>
-                    <th>Delivery status</th>
-                    <th>&nbsp;</th>
-
-                </tr>
-
-                <tr>
+            if (item.Status == "U TOKU")
+            {
+                <tr class="order-row">
                     <td>@item.StaPorucuje</td>
                     <td>@item.Kolicina</td>
                     <td>@item.Adresa</td>
                     <td>@item.Komentar</td>
                     <td>@item.CenaPorudzbine</td>
                     <td>@item.Status</td>
-
                     <td>
-                        <form method="post" action="~/Dostavljac/IzvrsiNarudzbinu">
-                            <input type="submit" value="Izvrsi narudzbinu" />
+                        <form method="post" action="Prihvati">
+                            <input type="submit" value="Accept" class="btn-accept" />
                             <input type="hidden" name="PorudzbinaId" value="@item.PorudzbinaId" />
                         </form>
-
-                    </td>                                    
+                    </td>
                 </tr>
-           </table>
-        
+            }
+        }
+    </tbody>
+</table>
+
+<hr />
+
+@foreach (Dostava_projekat.Models.Porudzbina item in Model)
+{
+    if (item.Status == "ZAPOCETO" && item.DostavljacKojiMePokupio == @ViewBag.model.KorisnickoIme)
+    {
+        <h4>Current Order</h4>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Article Name</th>
+                    <th>Amount</th>
+                    <th>Address</th>
+                    <th>Comment</th>
+                    <th>Price</th>
+                    <th>Delivery Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="order-row">
+                    <td>@item.StaPorucuje</td>
+                    <td>@item.Kolicina</td>
+                    <td>@item.Adresa</td>
+                    <td>@item.Komentar</td>
+                    <td>@item.CenaPorudzbine</td>
+                    <td>@item.Status</td>
+                    <td>
+                        <form method="post" action="~/Dostavljac/IzvrsiNarudzbinu">
+                            <input type="submit" value="Execute Order" class="btn-execute" />
+                            <input type="hidden" name="PorudzbinaId" value="@item.PorudzbinaId" />
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     }
 }
-
-
-
-

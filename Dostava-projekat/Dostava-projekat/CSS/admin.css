@@ -1,94 +1,130 @@
-﻿body {
-    background-color: seagreen;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    font-family: sans-serif;
-    margin: 0 auto;
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.pic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-    border: 5px solid wheat;
-    text-align: center;
-    max-width: 400px;
-    margin: 0 auto 10px; /*centriranje diva*/
-    margin-bottom: 3%;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
 }
-img {
-    border: 5px solid wheat;
+
+.pic img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .change {
-    display: flex;
-    justify-content: center;
-    max-width: 400px;
-    margin: 0 auto; /*centriranje diva*/
+    margin: 20px 0;
+    text-align: center;
 }
-ul {
-    margin: 0 auto;
-    list-style: none;
-}
-a{
-    cursor: pointer;
-    text-decoration: none;
-    color: wheat;
-}
-a:hover {
+
+    .change ul {
+        list-style-type: none;
+    }
+
+    .change li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    .change a {
         text-decoration: none;
-        color: black;
-}
+        color: #fff;
+        background-color: #28a745; 
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .change a:hover {
+            background-color: #218838; 
+        }
 
 h4 {
-    color: wheat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 20px;
+    color: #555;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-align: left;
 }
-form {
-   
-    text-align: center;
-   
-    margin: 0 auto 10px; /*centriranje forme*/
-    padding: 20px; /*prostor oko forme*/
-    width:100%;
-}
+
 table {
-    text-align: center;
-    
-    margin: 0 auto 10px; /*centriranje tabele*/
-    border: 5px solid wheat;
-    color: black;
     width: 100%;
-}
-th {
-    padding: 8px; /*prostor izmedju celija*/
-    background-color: #f2f2f2
-}
-td {
-    padding: 8px; /*prostor izmedju celija*/   
-}
-th, td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-td {
-    background-color: wheat;
+    max-width: 1000px; 
+    margin: 0 auto; 
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top:20px
 }
 
-td:hover {
-    background-color: #f2f2f2;
+    table th, table td {
+        padding: 12px 20px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: normal;
+    }
+
+    
+    table tr:nth-child(odd) {
+        background-color: #f9f9f9; 
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f1f1f1; 
+    }
+
+    table tr:hover {
+        background-color: #e9ecef;
+    }
+
+.submit-container {
+    text-align: center; 
+    margin-top: 20px;
 }
-input {
-    background-color: transparent;
+
+input[type="submit"] {
+    background-color: #28a745; 
+    color: white;
     border: none;
-    cursor: pointer; 
-    color: wheat;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block; 
 }
 
-input:hover {
-    color: black;
+    input[type="submit"]:hover {
+        background-color: #218838; 
+    }
+
+table td:nth-child(6) {
+    text-transform: capitalize;
 }
+
+.change a:before {
+    content: url('https://img.icons8.com/ios/50/000000/edit.png');
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+

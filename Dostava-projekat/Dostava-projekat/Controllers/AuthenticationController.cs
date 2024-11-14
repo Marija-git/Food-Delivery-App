@@ -33,7 +33,7 @@ namespace Dostava_projekat.Controllers
             {
                 if (kor.KorisnickoIme == korisnik.KorisnickoIme)
                 {
-                    ViewBag.Message = $"Korisnik {korisnik.KorisnickoIme} vec postoji!";
+                    ViewBag.Message = $"User {korisnik.KorisnickoIme} already exists!";
                     return View("RegisterError");
                 }
             }
@@ -42,19 +42,19 @@ namespace Dostava_projekat.Controllers
                  || korisnik.Prezime==null || korisnik.Adresa== null || korisnik.DatumRodjenja== null
                  ||korisnik.Tip==null || korisnik.Email == null)
             {
-                ViewBag.Message = "Popuniti sva polja!";
+                ViewBag.Message = "All fields are required!";
                 return View("RegisterError");
             }
 
             if(korisnik.Lozinka != nekalozinka)
             {
-                ViewBag.Message = "Lozinka mora biti ista u oba polja !";
+                ViewBag.Message = "Password error!";
                 return View("RegisterError");
             }
             
             if(korisnik.Tip != "Potrosac" && korisnik.Tip != "Administrator" && korisnik.Tip != "Dostavljac")
             {
-                ViewBag.Message = "Uneti validan tip!";
+                ViewBag.Message = "Enter valid type.";
                 return View("RegisterError");
             }
 
@@ -63,7 +63,7 @@ namespace Dostava_projekat.Controllers
                 korisnik.StatusZahteva = "U PROCESU";
                 db.KorisniciNaCekanjuOdobrenjaZahteva.Add(korisnik);
                 db.SaveChanges();
-                ViewBag.Message = "Vas zahtev za registraciju je poslat administratoru.";
+                ViewBag.Message = "Your register request is sucessfully sent to admin.";
                 return View("Provera");
             }
 
@@ -81,7 +81,7 @@ namespace Dostava_projekat.Controllers
 
             db.Korisnici.Add(k);
             db.SaveChanges();
-            ViewBag.Message = "Uspesna registracija.";
+            ViewBag.Message = "Successfully signed up.";
             return View("Provera");
         }
 
@@ -92,7 +92,7 @@ namespace Dostava_projekat.Controllers
             Korisnik k = korisnici.Find(u => u.Email.Equals(email) && u.Lozinka.Equals(lozinka));
             if (k == null)
             {
-                ViewBag.Message = $"Korisnik sa unetim email-om i lozinkom ne postoji!";
+                ViewBag.Message = $"User with this email and password doesn't exist!";
                 return View("LoginPocetna");
             }
             Session["korisnik"] = k;
@@ -116,7 +116,7 @@ namespace Dostava_projekat.Controllers
         public ActionResult LogOut()
         {
             Session["korisnik"] = null; //obrisemo sve sa sesije
-            ViewBag.Message = $"LOGGED OUT";
+            ViewBag.Message = $"Logged out";
             return View("LoginPocetna");
         }
 

@@ -23,13 +23,13 @@ namespace Dostava_projekat.Controllers
             Korisnik korisnik = (Korisnik)Session["korisnik"];
             if (korisnik == null || korisnik.KorisnickoIme == "")
             {
-                ViewBag.Message = "Morate se ulogovati kao potrosac";
+                ViewBag.Message = "You have to login as customer.";
                 return View("~/Views/Authentication/LoginPocetna.cshtml");
             }
 
             if (korisnik.Tip != "Potrosac")
             {
-                ViewBag.Message = "Nemas prava za ovo jer nisi potrosac";
+                ViewBag.Message = "This is for customer only.";
                 return View("~/Views/Authentication/LoginPocetna.cshtml");
             }
 
@@ -144,7 +144,7 @@ namespace Dostava_projekat.Controllers
             db.SaveChanges();
 
 
-            ViewBag.Message = $"Uspesna narudzbina";
+            ViewBag.Message = $"Succesfully ordered!";
             return View("~/Views/Authentication/Provera.cshtml");
         }
 

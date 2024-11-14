@@ -1,51 +1,78 @@
-﻿body {
-    background-color: seagreen;
+﻿
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 0;
-    font-family: sans-serif;
+}
+
+.container {
+    max-width: 70%; 
+    margin-left: 5%; 
+    text-align: center; 
 }
 
 h4 {
-    color: wheat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold; 
 }
 
-table {
-    border: 5px solid wheat;
-    text-align: center;
-    max-width: 100%;
-    margin: 0 auto 10px; /*centriranje tabele*/
-    padding: 20px; /*prostor oko tabele*/
-}
-th {
-    padding: 8px; /*prostor izmedju celija*/
-    background-color: #f2f2f2
+.styled-table {
+    width: 100%;
+    max-width: 800px; 
+    border-collapse: collapse;
+    margin: 0 auto; 
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-td {
-    padding: 8px; /*prostor izmedju celija*/
-}
-th, td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-td {
-    background-color: wheat;
-}
-td:hover {
+    .styled-table th, .styled-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .styled-table th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .styled-table tr:nth-child(even) {
         background-color: #f2f2f2;
-}
-input {
+    }
+
+    .styled-table tr:hover {
+        background-color: #ddd;
+    }
+
+
+.btn {
+    padding: 8px 16px;
     border: none;
     cursor: pointer;
-    color: black;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-    input:hover {
-        color: black;
+.accept-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+    .accept-btn:hover {
+        background-color: #45a049;
+    }
+
+.reject-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+    .reject-btn:hover {
+        background-color: #e53935;
     }

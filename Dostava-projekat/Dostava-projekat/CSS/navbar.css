@@ -1,0 +1,55 @@
+﻿
+.navbar-inverse .navbar-nav {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+    
+    .navbar-inverse .navbar-nav > li {
+        margin-bottom: 10px; 
+        border-bottom: 1px solid #444; 
+    }
+
+        
+        .navbar-inverse .navbar-nav > li > a {
+            color: white; 
+            padding: 15px; 
+            display: block; 
+            text-decoration: none; 
+            font-size: 16px; 
+            transition: background-color 0.3s ease; 
+        }
+
+          
+            .navbar-inverse .navbar-nav > li > a:hover {
+                background-color: #575757; 
+            }
+
+       
+        .navbar-inverse .navbar-nav > li.active > a {
+            background-color: #333; 
+        }
+
+
+.navbar-fixed-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 20px;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-fixed-left .navbar-collapse {
+        display: block; 
+    }
+
+    .navbar-fixed-left .navbar-nav {
+        text-align: left; 
+    }
+}

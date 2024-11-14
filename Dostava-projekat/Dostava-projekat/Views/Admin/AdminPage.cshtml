@@ -7,27 +7,21 @@
 
 @if (ViewBag.model.ImagePath != null)
 {
-        <div class="pic">
-            <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="chosen pic" />
-        </div>
-
+    <div class="pic">
+        <img src="@Url.Content("~/Images/" + ViewBag.model.ImagePath)" alt="chosen pic" />
+    </div>
 }
 
 <div class="change">
     <ul>
-        <li> <a id="a1" href="~/Korisnik/Profil">Azuriranje profila</a></li>
-        <li>  <a id="a2" href="~/Admin/Index">Zahtevi za registraciju</a></li>
+        <li><a id="a1" href="~/Korisnik/Profil">Update profile</a></li>
+        <li><a id="a2" href="~/Admin/Index">Register requests</a></li>
     </ul>
-
 </div>
 
 
-<hr />
-
-<h4 id="prvi">All articles</h4>
 <form method="post" action="~/Admin/DodajProizvod">
-
-    <table id="t1" border="1">
+    <table id="t1">
         <tr>
             <th>Article</th>
             <th>Price</th>
@@ -42,16 +36,13 @@
             </tr>
         }
     </table>
-
-    <input type="submit" value="Add new article" />
+    <div class="submit-container">
+        <input type="submit" value="Add new article" />
+    </div>
 </form>
 
 
-
-
-<hr />
-<h4>All orders</h4>
-<table id="t2" border="1">
+<table id="t2">
     <tr>
         <th>Article name</th>
         <th>Amount</th>
@@ -59,14 +50,11 @@
         <th>Comment</th>
         <th>Price</th>
         <th>Delivery status</th>
-
     </tr>
     @foreach (Dostava_projekat.Models.Porudzbina item in Model)
     {
         if (item.Status == "ZAPOCETO" || item.Status == "ZAVRSENO")
         {
-
-
             <tr>
                 <td>@item.StaPorucuje</td>
                 <td>@item.Kolicina</td>

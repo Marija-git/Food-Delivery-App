@@ -4,63 +4,42 @@
     ViewBag.Title = "Register";
 }
 
-<div>
-    @ViewBag.Message
+<div class="register-container">
+    <h2>Sign up</h2>
+    <form action="~/Authentication/RegistracijaKorisnika" method="post">
+        @ViewBag.Message
+        <div class="input-group">
+            <input type="text" name="korisnickoIme" placeholder="Username" required />
+        </div>
+        <div class="input-group">
+            <input type="password" name="lozinka" placeholder="Password" required />
+        </div>
+        <div class="input-group">
+            <input type="password" name="nekalozinka" placeholder="Confirm Password" required />
+        </div>
+        <div class="input-group">
+            <input type="text" name="ime" placeholder="Name" required />
+        </div>
+        <div class="input-group">
+            <input type="text" name="prezime" placeholder="Surname" required />
+        </div>
+        <div class="input-group">
+            <input list="tip" name="tip" placeholder="Role" required />
+            <datalist id="tip">
+                <option value="Administrator"></option>
+                <option value="Dostavljac"></option>
+                <option value="Potrosac"></option>
+            </datalist>
+        </div>
+        <div class="input-group">
+            <input type="email" name="email" placeholder="Email" required />
+        </div>
+        <div class="input-group">
+            <input type="date" name="DatumRodjenja" placeholder="Date of Birth" required />
+        </div>
+        <div class="input-group">
+            <input type="text" name="Adresa" placeholder="Address" required />
+        </div>
+        <button id="sbm" type="submit">Sign Up</button>
+    </form>
 </div>
-
-<form action="~/Authentication/RegistracijaKorisnika" method="post"> <span>Sign up</span>
-    <table>
-        <tr>
-            <td>
-                <input type="text" name="korisnickoIme" placeholder="user name"
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="password" name="lozinka" placeholder="password"
-            </td>
-        </tr>
-        <tr>
-           <td> <input type="password" name="nekalozinka" placeholder="password" /></td>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" name="ime" placeholder="name"
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" name="prezime" placeholder="surname"
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input list="tip" name="tip" placeholder="role"/>
-                <datalist id="tip">
-                    <option value="Administrator"></option>
-                    <option value="Dostavljac"></option>
-                    <option value="Potrosac"></option>
-                </datalist>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="email" name="email" placeholder="email"/>
-            </td>
-        </tr>
-        <tr>
-            <td> 
-            <input type="date" name="DatumRodjenja" placeholder="date of birth" />
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="Adresa" placeholder="address"/></td>
-        </tr>
-        <tr>
-            <td>
-                <input id="sbm" type="submit" value="sign up" />
-            </td>
-        </tr>
-    </table>
-
-</form>

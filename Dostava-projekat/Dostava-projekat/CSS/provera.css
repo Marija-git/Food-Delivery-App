@@ -1,17 +1,33 @@
-﻿body {
-    background-color: seagreen;
-
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-p[id='vjubag'] {
-    color: black;
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+
+.message-container {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    max-width: 400px;
     text-align: center;
-    font-size: 30px;
-    font-family: sans-serif;
-    background-color: indianred;
-    width: 300px;
-    margin-bottom: 30px;
-    border: double;
-    margin: 0px 420px;
-    margin-top:20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #007bff;
+}
+
+#vjubag {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
 }

@@ -1,29 +1,42 @@
-﻿body {
-    background-color: seagreen;
-    background-image: url("https://cdn3.iconfinder.com/data/icons/emoticon-emoji-1/50/Dissapointed-512.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-attachment: fixed;
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-div[id='vjubag'] {
-    color: black;
-    text-align: center;
-    font-size: 30px;
-    font-family: sans-serif;
-    background-color: indianred;
+
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8d7da;
+}
+
+
+.error-container {
+    background-color: #ffffff;
+    padding: 20px 30px;
     width: 300px;
-    margin-bottom: 30px;
-    border: double;
-    margin: 0px 420px;
-}
-h3 {
     text-align: center;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 60px;
-    font-family: sans-serif;
-    text-decoration: underline;
-    letter-spacing: 10px;
-    text-shadow: 1px 1px red;
-    line-height: 1.5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f5c6cb;
+}
+
+   
+    .error-container h3 {
+        color: #721c24;
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+#error-message {
+    color: #721c24;
+    font-size: 16px;
+    background-color: #f8d7da;
+    padding: 15px;
+    border-radius: 5px;
 }

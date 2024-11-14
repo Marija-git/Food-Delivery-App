@@ -4,53 +4,34 @@
     ViewBag.Title = "Poruci";
 }
 
-<form method="post" action="~/Potrosac/KreirajPorudzbinu">
-    <table>
+<form method="post" action="~/Potrosac/KreirajPorudzbinu" class="order-form">
+    <h2>Place Your Order</h2>
+    <div class="form-group">
+        <input list="p" name="ImeProizvoda" placeholder="Select the article" class="form-control" />
+        <datalist id="p">
+            @foreach (Proizvod p in @ViewBag.Message)
+            {
+                <option value="@p.ImeProizvoda.ToString()"></option>
+            }
+        </datalist>
+    </div>
 
-        <tr>
-            <td>
-                <input list="p" name="ImeProizvoda" placeholder="select the article" />
-                <datalist id="p">
+    <div class="form-group">
+        <input type="number" name="Kolicina" placeholder="Amount" class="form-control" />
+    </div>
 
-                    @foreach (Proizvod p in @ViewBag.Message)
-                    {
-                        <option value="@p.ImeProizvoda.ToString()"></option>
-                    }
+    <div class="form-group">
+        <input list="adresa" name="adresa" placeholder="Address" class="form-control" />
+        <datalist id="adresa">
+            <option value="@ViewBag.model.Adresa"></option>
+        </datalist>
+    </div>
 
-                </datalist>
-            </td>
-        </tr>
+    <div class="form-group">
+        <textarea name="Komentar" placeholder="Comment" class="form-control"></textarea>
+    </div>
 
-        <tr>
-            <td><input type="number" name="Kolicina" placeholder="amount"/></td>
-        </tr>
-
-
-        <tr>
-            <td>
-                <input list="adresa" name="adresa" placeholder="address"/>
-                <datalist id="adresa">
-                    
-                    <option value="@ViewBag.model.Adresa"></option>
-
-                </datalist>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <textarea name="Komentar" placeholder="comment"></textarea>
-            </td>
-        </tr>
-      
-        <tr>
-           <td>
-               
-                   <input  type="submit" value="order" />
-               
-           </td>
-        </tr>
-         
-    </table>
+    <div class="form-actions">
+        <input type="submit" value="Order" class="btn btn-primary" />
+    </div>
 </form>
-
