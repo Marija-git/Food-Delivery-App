@@ -1,6 +1,8 @@
-# Veb-2
+# Food Delivery App (web2 faculty project)
 Food delivery App / Aplikacija za dostavu hrane
-Cilj: Napredne veb tehnologije (Entity Framework,MS SQL Server).
+
+# Tehnologije: Entity Framework, MS SQL Server, MVC architecture, C#, ASP.NET, HTML, CSS
+
 Korisnici aplikacije su: Administrator, Dostavljač i Potrošač. U zavisnosti od uloge su implementirane odredjene funkcionalnosti.
 
 __Opis projekta__
@@ -101,4 +103,11 @@ __Ostalo za doradu/Poboljšanja__
    7.Prilikom promene slike se ne vidi odmah promena nego je potrebno ulogovati se ponovo. 
 
    8.Uspostava relacija između tabela u bazi.
+
+
+![neprijavljeni korisnik](https://github.com/Marija-git/Veb-2/assets/80058346/6d02f108-6e7e-43b7-b3b0-e1958d7a08be)
+![administrator](https://github.com/Marija-git/Veb-2/assets/80058346/25102a73-0453-41f4-b9ce-b803dc04bdf6)
+![dostavljac](https://github.com/Marija-git/Veb-2/assets/80058346/268ceb9d-8c3a-45de-9030-1d00fc139962)
+![potrosac](https://github.com/Marija-git/Veb-2/assets/80058346/1532cc7e-baa4-4714-8e20-f66ef4fe1b6a)
+![verification status check](https://github.com/Marija-git/Veb-2/assets/80058346/7331321f-789f-4f11-b5fe-3662636dd4cb)
 
